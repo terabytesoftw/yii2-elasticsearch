@@ -36,7 +36,7 @@ class ElasticsearchTargetTest extends TestCase
         $this->assertArrayHasKey('category', $source);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
