@@ -61,7 +61,7 @@ class ElasticsearchTargetTest extends TestCase
         ]);
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         $command = $this->getConnection()->createCommand();
         $command->deleteIndex($this->index);
