@@ -1145,6 +1145,10 @@ trait ActiveRecordTestTrait
             $expensiveItems[0]->_id,
             $expensiveItems[1]->_id,
         ];
+
+        var_dump($expensiveItemIds);
+        die;
+
         $this->assertStringContainsString(4, $expensiveItemIds);
         $this->assertStringContainsString(5, $expensiveItemIds);
 
