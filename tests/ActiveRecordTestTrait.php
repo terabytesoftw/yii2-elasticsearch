@@ -1141,8 +1141,14 @@ trait ActiveRecordTestTrait
         $cheapItems = $order->cheapItemsUsingViaWithCallable;
 
         $this->assertCount(2, $expensiveItems);
-        $this->assertStringContainsString(5, $expensiveItems[0]->_id);
-        $this->assertStringContainsString(4, $expensiveItems[1]->_id);
+
+        $expensiveItemIds = [
+            $expensiveItems[0]->_id,
+            $expensiveItems[1]->_id,
+        ];
+
+        $this->assertContains('4', $expensiveItemIds);
+        $this->assertContains('5', $expensiveItemIds);
         $this->assertCount(1, $cheapItems);
         $this->assertEquals(3, $cheapItems[0]->_id);
     }
