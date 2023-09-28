@@ -457,6 +457,7 @@ class QueryTest extends TestCase
         // Check that Elasticsearch is version 7.11.0 or later before running this test
         $elasticsearchInfo = $this->getConnection()->get('/');
         if(!version_compare($elasticsearchInfo['version']['number'], '7.11.0', '>=')) {
+            $this->expectNotToPerformAssertions();
             return;
         }
 

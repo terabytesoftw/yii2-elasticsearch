@@ -1145,8 +1145,8 @@ trait ActiveRecordTestTrait
             $expensiveItems[0]->_id,
             $expensiveItems[1]->_id,
         ];
-        $this->assertContains(4, $expensiveItemIds);
-        $this->assertContains(5, $expensiveItemIds);
+        $this->assertStringContainsString(4, $expensiveItemIds);
+        $this->assertStringContainsString(5, $expensiveItemIds);
 
         $this->assertCount(1, $cheapItems);
         $this->assertEquals(3, $cheapItems[0]->_id);
