@@ -122,6 +122,9 @@ class ActiveDataProvider extends \yii\data\ActiveDataProvider
 
         if (is_array(($results = $query->search($this->db)))) {
             $this->setQueryResults($results);
+            if ($pagination !== false) {
+                $pagination->totalCount = $this->getTotalCount();
+            }
             return $results['hits']['hits'];
         }
         $this->setQueryResults([]);
