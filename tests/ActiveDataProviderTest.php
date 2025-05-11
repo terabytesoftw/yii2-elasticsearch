@@ -150,6 +150,9 @@ class ActiveDataProviderTest extends TestCase
         ]);
 
         $pagination = $provider->getPagination();
+
+        var_dump($pagination);
+
         $this->assertEquals(3, $pagination->getTotalCount());
         $this->assertEquals(2, $pagination->getPageCount());
 
