@@ -153,11 +153,11 @@ class ActiveDataProviderTest extends TestCase
 
         var_dump($pagination);
 
-        $this->assertEquals(3, $pagination->getTotalCount());
+        $this->assertEquals(3, $provider->getTotalCount());
         $this->assertEquals(2, $pagination->getPageCount());
 
         $query->andWhere(['name' => 'user2']);
-        $this->assertEquals(1, $pagination->getTotalCount());
+        $this->assertEquals(1, $provider->getTotalCount());
         $this->assertEquals(1, $pagination->getPageCount());
     }
 }
